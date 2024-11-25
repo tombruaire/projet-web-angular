@@ -1,0 +1,169 @@
+<div class="card mb-5 mb-xl-10">
+    <div class="card-body pt-9 pb-0">
+        <div class="d-flex flex-wrap flex-sm-nowrap">
+            <div class="me-7 mb-4">
+                <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
+                    <img src="assets/img/profil/blank.png" alt="Image" />
+                    <div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px"></div>
+                </div>
+            </div>
+            <div class="flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="text-gray-900 fs-2 fw-bold me-1">Tom BRUAIRE</span>
+                            <i class="ki-duotone ki-verify fs-1" style="color: #0D6EFD!important;">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                            </i>
+                        </div>
+                        <div class="d-flex flex-wrap fw-semibold fs-6 mb-4 pe-2">
+                            <span class="d-flex align-items-center text-gray-500 me-5 mb-2">
+                                <i class="ki-duotone ki-profile-circle fs-4 me-1">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                    <span class="path3"></span>
+                                </i>USER
+                            </span>
+                            <span class="d-flex align-items-center text-gray-500 mb-2">
+                                <i class="ki-duotone ki-sms fs-4 me-1">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>tom.bruaire@gmail.com
+                            </span>
+                        </div>
+                    </div>
+                    <div class="d-flex my-4">
+                        <button class="btn btn-sm btn-danger" data-bs-stacked-modal="#kt_modal_delete_account">Supprimer mon compte</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold">
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-0 me-10 py-5 active" routerLink="/profil">Profil</a>
+            </li>
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-0 me-10 py-5" href="blogs.html">Blogs</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+    <div class="card-header cursor-pointer">
+        <div class="card-title m-0">
+            <h3 class="fw-bold m-0">Mes informations</h3>
+        </div>
+        <button class="btn btn-sm btn-success align-self-center" data-bs-stacked-modal="#kt_modal_edit_account">Modifier</button>
+    </div>
+    <div class="card-body p-9">
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">Identité</label>
+            <div class="col-lg-8">
+                <span class="fw-semibold fs-6 text-gray-800">Tom BRUAIRE</span>
+            </div>
+        </div>
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">Adresse email</label>
+            <div class="col-lg-8 fv-row">
+                <span class="fw-semibold fs-6 text-gray-800">tom.bruaire@gmail.com</span>
+            </div>
+        </div>
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">Rôle</label>
+            <div class="col-lg-8 fv-row">
+                <span class="fw-semibold fs-6 text-gray-800">
+                    <span class="badge badge-success">USER</span>
+                </span>
+            </div>
+        </div>
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">Blogs publiés</label>
+            <div class="col-lg-8 fv-row">
+                <span class="fw-semibold fs-6 text-gray-800">0</span>
+            </div>
+        </div>
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">Création du compte</label>
+            <div class="col-lg-8 fv-row">
+                <span class="fw-semibold fs-6 text-gray-800">25/11/2024 09:00</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL : Suppression du compte -->
+<div class="modal fade" id="kt_modal_delete_account" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Suppression du compte</h3>
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="ki-duotone ki-cross fs-1">
+                        <span class="path1"></span>
+                        <span class="path2"></span>
+                    </i>
+                </div>
+            </div>
+            <form method="post" action="">
+                <div class="modal-body">
+                    <div class="form-floating mb-5">
+                        <input type="text" name="email" id="email" placeholder="Adresse email" class="form-control bg-transparent" />
+                        <label for="email">Adresse email</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" name="password" id="password" placeholder="Mot de passe" class="form-control bg-transparent" />
+                        <label for="password">Mot de passe</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger">Supprimer mon compte</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- / MODAL : Suppression du compte -->
+
+<!-- MODAL : Modification du compte -->
+<div class="modal fade" id="kt_modal_edit_account" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Modification du compte</h3>
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="ki-duotone ki-cross fs-1">
+                        <span class="path1"></span>
+                        <span class="path2"></span>
+                    </i>
+                </div>
+            </div>
+            <form method="post" action="">
+                <div class="modal-body">
+                    <div class="row mb-5">
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input type="text" name="prenom" id="prenom" placeholder="Prénom" class="form-control" value="Tom" />
+                                <label for="prenom">Prénom</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input type="text" name="nom" id="nom" placeholder="Nom" class="form-control" value="BRUAIRE" />
+                                <label for="nom">Nom</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-floating">
+                        <input type="text" name="email" id="email" placeholder="Adresse email" class="form-control bg-transparent" value="tom.bruaire@gmail.com" />
+                        <label for="email">Adresse email</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Modifier mon compte</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- / MODAL : Modification du compte -->

@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ArticleComponent } from './article/article.component';
+import { ProfilComponent } from './profil/profil.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'article', // Ou 'article/:id'
     component: ArticleComponent
+  },
+  {
+    path: 'profil',
+    component: ProfilComponent
   },
 ];
 
