@@ -5,6 +5,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ArticleComponent } from './article/article.component';
 import { ProfilComponent } from './profil/profil.component';
+import { MesBlogsComponent } from './mes-blogs/mes-blogs.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'profil',
     component: ProfilComponent
+  },
+  {
+    path: 'mes-blogs',
+    component: MesBlogsComponent
   },
 ];
 

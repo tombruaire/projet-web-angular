@@ -10,6 +10,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ArticleComponent } from './article/article.component';
 import { ProfilComponent } from './profil/profil.component';
+import { MesBlogsComponent } from './mes-blogs/mes-blogs.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProfilComponent } from './profil/profil.component';
     ConnexionComponent,
     InscriptionComponent,
     ArticleComponent,
-    ProfilComponent
+    ProfilComponent,
+    MesBlogsComponent
   ],
   imports: [
     BrowserModule,
