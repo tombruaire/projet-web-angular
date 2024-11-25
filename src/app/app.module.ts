@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { ArticleComponent } from './article/article.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { InscriptionComponent } from './inscription/inscription.component';
     FooterComponent,
     HomeComponent,
     ConnexionComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
