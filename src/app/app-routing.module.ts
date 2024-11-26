@@ -6,6 +6,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { ArticleComponent } from './article/article.component';
 import { ProfilComponent } from './profil/profil.component';
 import { MesBlogsComponent } from './mes-blogs/mes-blogs.component';
+import { EditBlogComponent } from './edit-blog/edit-blog.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'mes-blogs',
     component: MesBlogsComponent
+  },
+  {
+    path: 'edit-blog', // ou 'blog/:id/edit'
+    component: EditBlogComponent
   },
 ];
 

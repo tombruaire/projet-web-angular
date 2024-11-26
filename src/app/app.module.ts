@@ -11,6 +11,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { ArticleComponent } from './article/article.component';
 import { ProfilComponent } from './profil/profil.component';
 import { MesBlogsComponent } from './mes-blogs/mes-blogs.component';
+import { EditBlogComponent } from './edit-blog/edit-blog.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MesBlogsComponent } from './mes-blogs/mes-blogs.component';
     InscriptionComponent,
     ArticleComponent,
     ProfilComponent,
-    MesBlogsComponent
+    MesBlogsComponent,
+    EditBlogComponent
   ],
   imports: [
     BrowserModule,
