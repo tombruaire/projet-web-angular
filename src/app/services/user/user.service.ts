@@ -1,21 +1,30 @@
 import { Injectable } from '@angular/core';
-import type { HttpClient } from "@angular/common/http";
+import { store } from 'src/app/database/firebase';
+import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
+import { serverTimestamp } from "firebase/firestore";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  users: {
-    prenom: string,
-    nom: string,
-    email: string,
-    password: string
-  }[] = [];
 
-  // constructor(private http: HttpClient) { }
-
-  addUser(prenom: string, nom: string, email: string, password: string) {
-    this.users.push({prenom, nom, email, password});
+  async addUser({ prenom, nom, email, password }: any) {
+    const newUserId = doc(collection(store, "utilisateurs")).id;
+    return setDoc(doc(store, "utilisateurs", newUserId), {
+        id: newUserId,
+        prenom,
+        nom,
+        email,
+        password,
+        nbTentatives: 0,
+        createdAt: serverTimestamp(),
+      })
+      .then((res) => {
+        console.log("success")
+      })
+      .catch(() => {
+        console.log("erreur")
+      })
   }
 
   editUser(email: string) {
@@ -23,6 +32,6 @@ export class UserService {
   }
 
   deleteUser(email: string) {
-    this.users = this.users.filter(user => user.email !== email);
+    //
   }
 }
