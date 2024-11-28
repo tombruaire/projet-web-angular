@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { store } from 'src/app/database/firebase';
-import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
+import { collection, doc, setDoc } from 'firebase/firestore';
 import { serverTimestamp } from "firebase/firestore";
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+  constructor(private afAuth: AngularFireAuth) {}
 
   async addUser({ prenom, nom, email, password }: any) {
     const newUserId = doc(collection(store, "utilisateurs")).id;
@@ -25,6 +28,10 @@ export class UserService {
       .catch(() => {
         console.log("erreur")
       })
+  }
+
+  login({ email, password }: any) {
+    return this.afAuth.signInWithEmailAndPassword(email, password);
   }
 
   editUser(email: string) {
