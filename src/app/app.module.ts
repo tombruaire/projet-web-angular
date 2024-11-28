@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +17,7 @@ import { ArticleComponent } from './article/article.component';
 import { ProfilComponent } from './profil/profil.component';
 import { MesBlogsComponent } from './mes-blogs/mes-blogs.component';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
+import { environment } from 'src/environments/environments';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,7 @@ import { EditBlogComponent } from './edit-blog/edit-blog.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
   ],
   providers: [],
