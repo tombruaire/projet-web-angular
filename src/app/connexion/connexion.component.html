@@ -1,4 +1,11 @@
 <div class="row d-flex justify-content-center">
+    <div *ngIf="errorMessage" class="row d-flex justify-content-center mb-5">
+        <div class="col-auto">
+            <div class="alert alert-danger text-center mb-5">
+                {{ errorMessage }}
+            </div>
+        </div>
+    </div>
     <div class="bg-body d-flex flex-column align-items-stretch flex-center rounded-4 w-md-600px animate__animated animate__zoomIn">
         <div class="d-flex flex-center flex-column flex-column-fluid px-lg-10">
             <form class="form w-100" id="kt_sign_in_form" (onSubmit)="onSubmit($event)">

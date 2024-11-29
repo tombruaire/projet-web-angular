@@ -22,15 +22,15 @@ export class ConnexionComponent {
   @HostListener('submit', ["$event"])
   async onSubmit(e: any) {
     e.preventDefault();
-    // console.log(this.fieldsValues);
-    // this.userService.login(this.fieldsValues);
     try {
       const result = await this.userService.login(this.fieldsValues);
       console.log("Utilisateur connecté :", result.user);
+      this.errorMessage = '';
       this.router.navigate(['/']);
     } catch (error) {
       console.error("Identifiants incorrects !");
       // this.errorMessage = error.message; // Affiche l'erreur dans l'interface utilisateur
+      this.errorMessage = "Identifiants incorrects, veuillez réessayer.";
     }
   }
 }
