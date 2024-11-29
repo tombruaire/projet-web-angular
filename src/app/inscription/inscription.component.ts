@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { UserService } from '../services/user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inscription',
@@ -8,10 +9,16 @@ import { UserService } from '../services/user/user.service';
 })
 export class InscriptionComponent {
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
   
   fieldsValues:any = {}
   errorMessage:string = '';
+  isPasswordVisible = false;
+
+  togglePasswordVisibility(event: Event): void {
+    const checkbox = event.target as HTMLInputElement;
+    this.isPasswordVisible = checkbox.checked; // Modifie la visibilité en fonction de l'état de la checkbox
+  }
 
   @HostListener("input", ["$event.target"])
   changeHandler(target: any,) {
@@ -33,6 +40,7 @@ export class InscriptionComponent {
     try {
       // Appeler le service pour ajouter l'utilisateur
       await this.userService.addUser(this.fieldsValues);
+      this.router.navigate(['/connexion']);
     } catch (error) {
       console.error('Erreur lors de l\'inscription:', error);
       this.errorMessage = 'Une erreur est survenue lors de l\'inscription.';
