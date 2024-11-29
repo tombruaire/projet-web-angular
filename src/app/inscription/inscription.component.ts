@@ -28,17 +28,23 @@ export class InscriptionComponent {
   @HostListener('submit', ["$event"])
   async onSubmit(e: any) {
     e.preventDefault();
+
     // Vérifier si les mots de passe correspondent
     if (this.fieldsValues.password !== this.fieldsValues.confirmPassword) {
       this.errorMessage = 'Les mots de passe ne correspondent pas.';
-      return; // Ne pas procéder à l'inscription
+      return; // Arrêter l'exécution de la soumission du formulaire
     }
 
-    // Si les mots de passe correspondent, effacer le message d'erreur
+    const emailTaken = await this.userService.ifEmailExist(this.fieldsValues.email);
+    if (emailTaken) {
+      this.errorMessage = 'Adresse email déjà utilisée !';
+      return; 
+    }
+
+    // Effacer le message d'erreur
     this.errorMessage = '';
     
     try {
-      // Appeler le service pour ajouter l'utilisateur
       await this.userService.addUser(this.fieldsValues);
       this.router.navigate(['/connexion']);
     } catch (error) {

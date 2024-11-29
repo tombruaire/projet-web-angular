@@ -18,6 +18,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { MesBlogsComponent } from './mes-blogs/mes-blogs.component';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
 import { environment } from 'src/environments/environments';
+import { SupprimerCompteComponent } from './supprimer-compte/supprimer-compte.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { environment } from 'src/environments/environments';
     ArticleComponent,
     ProfilComponent,
     MesBlogsComponent,
-    EditBlogComponent
+    EditBlogComponent,
+    SupprimerCompteComponent
   ],
   imports: [
     BrowserModule,

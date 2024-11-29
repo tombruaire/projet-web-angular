@@ -9,6 +9,7 @@ import { MesBlogsComponent } from './mes-blogs/mes-blogs.component';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
 import { AuthGuard } from './guards/auth.guard';
 import { GuestGuard } from './guards/guest.guard';
+import { SupprimerCompteComponent } from './supprimer-compte/supprimer-compte.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,11 @@ const routes: Routes = [
   {
     path: 'mes-blogs',
     component: MesBlogsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'supprimer-compte',
+    component: SupprimerCompteComponent,
     canActivate: [AuthGuard]
   },
   {

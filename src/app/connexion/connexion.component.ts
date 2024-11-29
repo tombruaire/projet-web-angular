@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { UserService } from '../services/user/user.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-connexion',
@@ -12,7 +12,7 @@ export class ConnexionComponent {
   constructor(private userService: UserService, private router: Router) {}
   
   fieldsValues:any = {}
-  errorMessage: string = ''; // Stocker les erreurs pour l'affichage
+  errorMessage:string = '';
 
   @HostListener("input", ["$event.target"])
   changeHandler(target: any,) {
