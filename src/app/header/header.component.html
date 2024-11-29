@@ -120,10 +120,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="app-navbar-item">
+                <!-- Si l'utilisateur est connecté -->
+                <div class="app-navbar-item" *ngIf="isConnected">
+                    <a routerLink="/profil" class="btn btn-sm btn-success">Profil</a>
+                </div>
+                <div class="app-navbar-item" *ngIf="isConnected">
+                    <a (click)="logout()" class="btn btn-sm btn-danger">Déconnexion</a>
+                </div>
+                <!-- Si l'utilisateur n'est pas connecté -->
+                <div class="app-navbar-item" *ngIf="!isConnected">
                     <a routerLink="/connexion" class="btn btn-sm btn-success">Connexion</a>
                 </div>
-                <div class="app-navbar-item">
+                <div class="app-navbar-item" *ngIf="!isConnected">
                     <a routerLink="/inscription" class="btn btn-sm btn-info">Inscription</a>
                 </div>
             </div>

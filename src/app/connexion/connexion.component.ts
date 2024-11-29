@@ -22,13 +22,16 @@ export class ConnexionComponent {
   async onSubmit(e: any) {
     e.preventDefault();
     // console.log(this.fieldsValues);
-    this.userService.login(this.fieldsValues);
+    // this.userService.login(this.fieldsValues);
     try {
+      // await this.userService.login(this.fieldsValues);
       const result = await this.userService.login(this.fieldsValues);
       console.log("Utilisateur connecté :", result.user);
+      // console.log("Connexion réussie !");
       // Redirection ou action après la connexion réussie
     } catch (error) {
-      this.errorMessage = error.message; // Affiche l'erreur dans l'interface utilisateur
+      console.error("Identifiants incorrects !");
+      // this.errorMessage = error.message; // Affiche l'erreur dans l'interface utilisateur
     }
   }
 }
