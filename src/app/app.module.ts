@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http";
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -19,6 +19,7 @@ import { MesBlogsComponent } from './mes-blogs/mes-blogs.component';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
 import { environment } from 'src/environments/environments';
 import { SupprimerCompteComponent } from './supprimer-compte/supprimer-compte.component';
+import { ModifierProfilComponent } from './modifier-profil/modifier-profil.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SupprimerCompteComponent } from './supprimer-compte/supprimer-compte.co
     ProfilComponent,
     MesBlogsComponent,
     EditBlogComponent,
-    SupprimerCompteComponent
+    SupprimerCompteComponent,
+    ModifierProfilComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import { SupprimerCompteComponent } from './supprimer-compte/supprimer-compte.co
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

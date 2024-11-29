@@ -44,6 +44,9 @@
                 <a class="nav-link text-active-primary ms-0 me-10 py-5" routerLink="/mes-blogs">Blogs</a>
             </li>
             <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-0 me-10 py-5" routerLink="/modifier-profil">Modifier le profil</a>
+            </li>
+            <li class="nav-item mt-2">
                 <a class="nav-link text-active-primary ms-0 me-10 py-5" routerLink="/supprimer-compte">Supprimer le compte</a>
             </li>
         </ul>
@@ -51,11 +54,10 @@
 </div>
 
 <div class="card mb-5 mb-xl-10 animate__animated animate__slideInUp" id="kt_profile_details_view">
-    <div class="card-header cursor-pointer">
+    <div class="card-header">
         <div class="card-title m-0">
             <h3 class="fw-bold m-0">Mes informations</h3>
         </div>
-        <button class="btn btn-sm btn-success align-self-center" data-bs-stacked-modal="#kt_modal_edit_account">Modifier</button>
     </div>
     <div class="card-body p-9" *ngIf="userInfo">
         <div class="row mb-7">

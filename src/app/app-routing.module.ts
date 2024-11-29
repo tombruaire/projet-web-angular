@@ -10,6 +10,7 @@ import { EditBlogComponent } from './edit-blog/edit-blog.component';
 import { AuthGuard } from './guards/auth.guard';
 import { GuestGuard } from './guards/guest.guard';
 import { SupprimerCompteComponent } from './supprimer-compte/supprimer-compte.component';
+import { ModifierProfilComponent } from './modifier-profil/modifier-profil.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,11 @@ const routes: Routes = [
   {
     path: 'mes-blogs',
     component: MesBlogsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'modifier-profil',
+    component: ModifierProfilComponent,
     canActivate: [AuthGuard]
   },
   {

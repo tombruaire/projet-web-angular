@@ -13,6 +13,12 @@ export class ConnexionComponent {
   
   fieldsValues:any = {}
   errorMessage:string = '';
+  isPasswordVisible = false;
+
+  togglePasswordVisibility(event: Event): void {
+    const checkbox = event.target as HTMLInputElement;
+    this.isPasswordVisible = checkbox.checked;
+  }
 
   @HostListener("input", ["$event.target"])
   changeHandler(target: any,) {

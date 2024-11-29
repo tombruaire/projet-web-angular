@@ -1,6 +1,6 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { UserService } from '../services/user/user.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-supprimer-compte',
@@ -16,6 +16,12 @@ export class SupprimerCompteComponent {
   fieldsValues: any = {}
   errorMessage: string = '';
   successMessage: string = '';
+  isPasswordVisible = false;
+
+  togglePasswordVisibility(event: Event): void {
+    const checkbox = event.target as HTMLInputElement;
+    this.isPasswordVisible = checkbox.checked;
+  }
 
   ngOnInit(): void {
     this.userService.user$.subscribe(async (user) => {
