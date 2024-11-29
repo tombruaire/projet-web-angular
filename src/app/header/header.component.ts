@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../services/user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import { UserService } from '../services/user/user.service';
 export class HeaderComponent {
   isConnected = false;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     // Surveiller l'état de connexion de l'utilisateur
@@ -20,7 +21,9 @@ export class HeaderComponent {
 
   logout(): void {
     this.userService.logout().then(() => {
-      console.log('Déconnecté avec succès');
+      this.router.navigate(['/connexion']);
+    }).catch((error) => {
+      console.error('Erreur lors de la déconnexion :', error);
     });
   }
 }

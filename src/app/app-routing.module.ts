@@ -7,6 +7,7 @@ import { ArticleComponent } from './article/article.component';
 import { ProfilComponent } from './profil/profil.component';
 import { MesBlogsComponent } from './mes-blogs/mes-blogs.component';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -15,11 +16,13 @@ const routes: Routes = [
   },
   {
     path: 'connexion',
-    component: ConnexionComponent
+    component: ConnexionComponent,
+    canActivate: [authGuard]
   },
   {
     path: 'inscription',
-    component: InscriptionComponent
+    component: InscriptionComponent,
+    canActivate: [authGuard]
   },
   {
     path: 'article', // Ou 'article/:id'
