@@ -54,6 +54,7 @@ export class UserService {
         prenom: fieldsValues.prenom,
         nom: fieldsValues.nom,
         email: fieldsValues.email,
+        nbTenatives: 0,
         createdAt: serverTimestamp(),
       });
 
