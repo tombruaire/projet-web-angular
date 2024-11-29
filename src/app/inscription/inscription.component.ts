@@ -11,6 +11,7 @@ export class InscriptionComponent {
   constructor(private userService: UserService) {}
   
   fieldsValues:any = {}
+  errorMessage:string = '';
 
   @HostListener("input", ["$event.target"])
   changeHandler(target: any,) {
@@ -18,8 +19,23 @@ export class InscriptionComponent {
   }
 
   @HostListener('submit', ["$event"])
-  onSubmit(e: any) {
+  async onSubmit(e: any) {
     e.preventDefault();
-    this.userService.addUser(this.fieldsValues);
+    // Vérifier si les mots de passe correspondent
+    if (this.fieldsValues.password !== this.fieldsValues.confirmPassword) {
+      this.errorMessage = 'Les mots de passe ne correspondent pas.';
+      return; // Ne pas procéder à l'inscription
+    }
+
+    // Si les mots de passe correspondent, effacer le message d'erreur
+    this.errorMessage = '';
+    
+    try {
+      // Appeler le service pour ajouter l'utilisateur
+      await this.userService.addUser(this.fieldsValues);
+    } catch (error) {
+      console.error('Erreur lors de l\'inscription:', error);
+      this.errorMessage = 'Une erreur est survenue lors de l\'inscription.';
+    }
   }
 }

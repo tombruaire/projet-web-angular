@@ -7,17 +7,17 @@ import { map, take } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivate {
+export class GuestGuard implements CanActivate {
   constructor(private userService: UserService, private router: Router) {}
 
   canActivate(): Observable<boolean> {
     return this.userService.user$.pipe(
-      take(1), // Prendre seulement la première émission
+      take(1),
       map((user) => {
-        if (user) {
-          return true; // L'utilisateur est connecté, accès autorisé
+        if (!user) {
+          return true; // Utilisateur non connecté, accès autorisé
         } else {
-          this.router.navigate(['/connexion']); // Rediriger si non connecté
+          this.router.navigate(['/']); // Redirection si déjà connecté
           return false;
         }
       })

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { store } from 'src/app/database/firebase';
-import { collection, doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { serverTimestamp } from "firebase/firestore";
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Observable } from 'rxjs';
@@ -58,13 +58,21 @@ export class UserService {
       });
   }
 
-  /* SAVE
-  logout(): Promise<void> {
-    return this.afAuth.signOut()
-      .then(() => console.log("Déconnexion réussie !"))
-      .catch((error) => console.error("Erreur lors de la déconnexion : ", error));
+  async getUserInfo(uid: string): Promise<any> {
+    try {
+      const userDocRef = doc(store, `utilisateurs/${uid}`);
+      const userDoc = await getDoc(userDocRef);
+      if (userDoc.exists()) {
+        return userDoc.data();
+      } else {
+        console.log('Utilisateur non trouvé');
+        return null;
+      }
+    } catch (error) {
+      console.error('Erreur lors de la récupération des informations de l\'utilisateur:', error);
+      return null;
+    }
   }
-  */
 
   logout(): Promise<void> {
     return this.afAuth.signOut();

@@ -7,7 +7,8 @@ import { ArticleComponent } from './article/article.component';
 import { ProfilComponent } from './profil/profil.component';
 import { MesBlogsComponent } from './mes-blogs/mes-blogs.component';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
-import { authGuard } from './guards/auth.guard';
+import { AuthGuard } from './guards/auth.guard';
+import { GuestGuard } from './guards/guest.guard';
 
 const routes: Routes = [
   {
@@ -17,12 +18,12 @@ const routes: Routes = [
   {
     path: 'connexion',
     component: ConnexionComponent,
-    canActivate: [authGuard]
+    canActivate: [GuestGuard] // Accessible uniquement si non connecté
   },
   {
     path: 'inscription',
     component: InscriptionComponent,
-    canActivate: [authGuard]
+    canActivate: [GuestGuard]
   },
   {
     path: 'article', // Ou 'article/:id'
@@ -30,15 +31,18 @@ const routes: Routes = [
   },
   {
     path: 'profil',
-    component: ProfilComponent
+    component: ProfilComponent,
+    canActivate: [AuthGuard] // Accessible uniquement si connecté
   },
   {
     path: 'mes-blogs',
-    component: MesBlogsComponent
+    component: MesBlogsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'edit-blog', // ou 'blog/:id/edit'
-    component: EditBlogComponent
+    component: EditBlogComponent,
+    canActivate: [AuthGuard]
   },
 ];
 
