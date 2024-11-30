@@ -30,7 +30,7 @@ export class ConnexionComponent {
     e.preventDefault();
     try {
       const result = await this.userService.login(this.fieldsValues);
-      console.log("Utilisateur connecté :", result.user);
+      // console.log("Utilisateur connecté :", result.user);
       this.errorMessage = '';
       this.router.navigate(['/']);
     } catch (error) {

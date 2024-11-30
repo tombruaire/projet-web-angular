@@ -1,12 +1,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyDjbTteAzi8fheUiSqq8jhXXj2HO-BtEcc",
-    authDomain: "game-haven-blog.firebaseapp.com",
-    projectId: "game-haven-blog",
-    storageBucket: "game-haven-blog.firebasestorage.app",
-    messagingSenderId: "55292533705",
-    appId: "1:55292533705:web:922d4ecb113d9afa2d6618",
-    measurementId: "G-TPKMQ85HNG"
+    apiKey: "AIzaSyCFCaj1ZR80cz_kg_h3xUHhfih9oQT1b-E",
+    authDomain: "game-haven-bb46e.firebaseapp.com",
+    projectId: "game-haven-bb46e",
+    storageBucket: "game-haven-bb46e.firebasestorage.app",
+    messagingSenderId: "113327270434",
+    appId: "1:113327270434:web:69ce1207b8f5e1d58c387b"
   }
 };
