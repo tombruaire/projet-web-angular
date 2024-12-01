@@ -1,27 +1,51 @@
-# GameHavenBlog
+# Game Haven Blog
+Game Haven Blog est une application web et mobile de blog contenant des articles de jeux-vidéo. Les utilisateurs de ce blog peuvent publier, lire, modifier et supprimer des articles dans différentes catégories de jeux-vidéo.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+## Fonctionnalités
+- **Créer**, **lire**, **modifier** et **supprimer** un compte utilisateur
+- **Publier**, **lire**, **modifier** et **supprimer** un article
 
-## Development server
+## Stacks utilisées
+- **Application web** : Angular (`v16`)
+- **Application mobile** : Flutter
+- **Base de données** : Firebase
+- **Node.js** : `v18.12.0` <a href="https://nodejs.org/fr/blog/release/v18.12.0">Télécharger la version</a>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Spécifications techniques
+### Routage
+- `/` : Page d'accueil
+- `/connexion` : Page du formulaire de connexion
+- `/inscription` : Page du formulaire d'inscription
+- `/article` : Page pour voir un article
+- `/profil` : Page affichant les informations de l'utilisateur connecté
+- `/mes-blogs` : Page affichant les aricles de l'utilisateur
+- `/modifier-profil` : Page du formulaire de modification du compte
+- `/supprime-compte` : Page du formulaire de suppression du compte
+- `/edit-blog` : Page de modification d'un article
 
-## Code scaffolding
+## Collaborateurs
+<ul>
+    <li>Tom BRUAIRE : <a href="https://github.com/tombruaire">https://github.com/tombruaire</a></li>
+    <li>Youssef ALAOUI EL MRANI : <a href="https://github.com/Yousseflamrani">https://github.com/Yousseflamrani</a></li>
+    <li>Baptiste POCHEBONNE : <a href="https://github.com/GMTitou">https://github.com/GMTitou</a></li>
+</ul>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Gestionnaire de tâches
+**Planificateur Microsoft** : <a href="https://planner.cloud.microsoft/webui/v1/plan/gnoVo8oLHkuWdCOosqA5MJYAEiWk?tid=413600cf-bd4e-4c7c-8a61-69e73cddf731">https://planner.cloud.microsoft/webui/v1/plan/gnoVo8oLHkuWdCOosqA5MJYAEiWk?tid=413600cf-bd4e-4c7c-8a61-69e73cddf731</a>
 
-## Build
+## Installation
+```
+git clone https://github.com/tombruaire/projet-web-angular.git game_haven_blog_angular
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+cd game_haven_blog_angular
+```
 
-## Running unit tests
+```
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+ng serve
+```
